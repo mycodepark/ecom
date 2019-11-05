@@ -13,6 +13,11 @@
 
 //Route::view('/', 'site.pages.homepage');
 Route::get('/', 'Site\HomeController@show')->name('home.show');
+Route::get('/hakkimizda', 'Site\AboutController@show')->name('about.show');
+Route::get('/magazalarimiz', 'Site\ShopController@show')->name('shop.show');
+Route::get('/iletisim', 'Site\ContactController@show')->name('contact.show');
+
+
 Route::get('/category/{slug}', 'Site\CategoryController@show')->name('category.show');
 Route::get('/product/{slug}', 'Site\ProductController@show')->name('product.show');
 

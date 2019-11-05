@@ -45,6 +45,12 @@
                 <span class="app-menu__label">Slaytlar</span>
             </a>
         </li>
+        <li>
+            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.about.index' ? 'active' : '' }}" href="{{ route('admin.about.index') }}">
+                <i class="app-menu__icon fa fa-tags"></i>
+                <span class="app-menu__label">Hakkımızda</span>
+            </a>
+        </li>
 
 
         <li>

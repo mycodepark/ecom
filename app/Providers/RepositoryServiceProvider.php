@@ -16,6 +16,8 @@ use App\Repositories\OrderRepository;
 //
 use App\Contracts\CarouselContract;
 use App\Repositories\CarouselRepository;
+use App\Contracts\AboutContract;
+use App\Repositories\AboutRepository;
 
 
 
@@ -29,6 +31,7 @@ class RepositoryServiceProvider extends ServiceProvider
         OrderContract::class            =>          OrderRepository::class,
         //
         CarouselContract::class         =>          CarouselRepository::class,
+        AboutContract::class            =>          AboutRepository::class,
 
     ];
 

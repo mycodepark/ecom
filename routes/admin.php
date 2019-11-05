@@ -89,6 +89,15 @@ Route::group(['prefix'  =>  'admin'], function () {
         });
 
 
+        Route::group(['prefix'  =>   'about'], function() {
+
+            Route::get('/', 'Admin\AboutController@index')->name('admin.about.index');
+            Route::get('/edit', 'Admin\AboutController@edit')->name('admin.about.edit');
+            Route::post('/update', 'Admin\AboutController@update')->name('admin.about.update');
+
+        });
+
+
 
 
     });
