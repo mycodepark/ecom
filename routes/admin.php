@@ -75,5 +75,21 @@ Route::group(['prefix'  =>  'admin'], function () {
            Route::get('/', 'Admin\OrderController@index')->name('admin.orders.index');
            Route::get('/{order}/show', 'Admin\OrderController@show')->name('admin.orders.show');
         });
+
+
+        Route::group(['prefix'  =>   'carousels'], function() {
+
+            Route::get('/', 'Admin\CarouselController@index')->name('admin.carousels.index');
+            Route::get('/create', 'Admin\CarouselController@create')->name('admin.carousels.create');
+            Route::post('/store', 'Admin\CarouselController@store')->name('admin.carousels.store');
+            Route::get('/{id}/edit', 'Admin\CarouselController@edit')->name('admin.carousels.edit');
+            Route::post('/update', 'Admin\CarouselController@update')->name('admin.carousels.update');
+            Route::get('/{id}/delete', 'Admin\CarouselController@delete')->name('admin.carousels.delete');
+
+        });
+
+
+
+
     });
 });

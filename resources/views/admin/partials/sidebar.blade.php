@@ -37,6 +37,16 @@
                 <span class="app-menu__label">Attributes</span>
             </a>
         </li>
+
+
+        <li>
+            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.carousels.index' ? 'active' : '' }}" href="{{ route('admin.carousels.index') }}">
+                <i class="app-menu__icon fa fa-tags"></i>
+                <span class="app-menu__label">Slaytlar</span>
+            </a>
+        </li>
+
+
         <li>
             <a class="app-menu__item {{ Route::currentRouteName() == 'admin.settings' ? 'active' : '' }}" href="{{ route('admin.settings') }}">
                 <i class="app-menu__icon fa fa-cogs"></i>
