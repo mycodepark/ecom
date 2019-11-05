@@ -98,6 +98,18 @@ Route::group(['prefix'  =>  'admin'], function () {
         });
 
 
+        Route::group(['prefix'  =>   'outlets'], function() {
+
+            Route::get('/', 'Admin\OutletController@index')->name('admin.outlets.index');
+            Route::get('/create', 'Admin\OutletController@create')->name('admin.outlets.create');
+            Route::post('/store', 'Admin\OutletController@store')->name('admin.outlets.store');
+            Route::get('/{id}/edit', 'Admin\OutletController@edit')->name('admin.outlets.edit');
+            Route::post('/update', 'Admin\OutletController@update')->name('admin.outlets.update');
+            Route::get('/{id}/delete', 'Admin\OutletController@delete')->name('admin.outlets.delete');
+
+        });
+
+
 
 
     });

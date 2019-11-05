@@ -51,6 +51,12 @@
                 <span class="app-menu__label">Hakkımızda</span>
             </a>
         </li>
+        <li>
+            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.outlets.index' ? 'active' : '' }}" href="{{ route('admin.outlets.index') }}">
+                <i class="app-menu__icon fa fa-tags"></i>
+                <span class="app-menu__label">Mağazalarımız</span>
+            </a>
+        </li>
 
 
         <li>
