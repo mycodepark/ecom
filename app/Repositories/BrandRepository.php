@@ -102,9 +102,13 @@ class BrandRepository extends BaseRepository implements BrandContract
             }
 
             $logo = $this->uploadOne($params['logo'], 'brands');
-        }
 
-        $merge = $collection->merge(compact('logo'));
+            $merge = $collection->merge(compact('logo'));
+
+        } else {
+
+            $merge = $collection;
+        }
 
         $brand->update($merge->all());
 
