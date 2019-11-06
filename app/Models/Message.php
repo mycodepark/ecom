@@ -2,21 +2,22 @@
 
 namespace App\Models;
 
+use App\Models\Message;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
-class About extends Model
+class Message extends Model
 {
-
     /**
      * @var string
      */
-    protected $table = 'abouts';
+    protected $table = 'messages';
 
     /**
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'image', 'phone', 'email', 'adress', 'map'
+        'name', 'email', 'subject', 'message'
     ];
 
 

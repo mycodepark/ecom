@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\About;
+use App\Models\Message;
 use App\Traits\UploadAble;
 use Illuminate\Http\UploadedFile;
 use App\Contracts\AboutContract;
@@ -65,7 +66,7 @@ class AboutRepository extends BaseRepository implements AboutContract
      */
     public function updateAbout(array $params)
     {
-        $about = $this->findAboutById($params['id']);
+        $about = $this->findAboutById(1);
 
         $collection = collect($params)->except('_token');
 
@@ -87,6 +88,27 @@ class AboutRepository extends BaseRepository implements AboutContract
         $about->update($merge->all());
 
         return $about;
+    }
+
+
+    /**
+     * @param array $params
+     * @return Message|mixed
+     */
+    public function createMessage(array $params)
+    {
+        try {
+            $collection = collect($params);
+
+            $message = new Message($collection->all());
+
+            $message->save();
+
+            return $message;
+
+        } catch (QueryException $exception) {
+            throw new InvalidArgumentException($exception->getMessage());
+        }
     }
 
     

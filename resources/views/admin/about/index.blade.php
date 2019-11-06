@@ -18,14 +18,22 @@
                                 <th> Resim </th>
                                 <th> Başlık </th>
                                 <th> Açıklama </th>
+                                <th> Telefon </th>
+                                <th> Mail </th>
+                                <th> Adres </th>
+                                <th> Harita </th>
                                 <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                             </tr>
                         </thead>
                         <tbody>
                                 <tr>
                                     <td style="width:100px"> <img src="{{ asset('storage/'.$about->image) }}" id="categoryImage" class="img-fluid" alt="img"></td>
-                                    <td style="width:200px">{{ $about->name }}</td>
+                                    <td >{{ $about->name }}</td>
                                     <td>{{ $about->description }}</td>
+                                    <td>{{ $about->phone }}</td>
+                                    <td>{{ $about->email }}</td>
+                                    <td>{{ $about->adress }}</td>
+                                    <td>{{ $about->map }}</td>
                                     <td class="text-center">
                                         <div class="btn-group" role="group" aria-label="Second group">
                                             <a href="{{ route('admin.about.edit') }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>

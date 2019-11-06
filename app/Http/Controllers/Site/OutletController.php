@@ -36,11 +36,11 @@ class OutletController extends BaseController
      */
     public function show()
     {
-        $outlet = $this->outletRepository->listOutlets();
+        $outlets = $this->outletRepository->listOutlets();
         $categories = $this->categoryRepository->listCategories();
 
 
-        return view('site.pages.outlet', compact('outlet', 'categories'));
+        return view('site.pages.outlet', compact('outlets', 'categories'));
     }
 
 

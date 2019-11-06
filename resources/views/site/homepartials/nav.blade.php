@@ -17,8 +17,8 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav menu__list">
-					<li class="active menu__item menu__item--current"><a class="menu__link" href="{{ url('/') }}">Anasayfa <span class="sr-only">(current)</span></a></li>
-					<li class=" menu__item"><a class="menu__link" href="{{ url('/hakkimizda') }}">Hakkımızda</a></li>
+					<li class="{{ Route::currentRouteName() == 'home.show' ? 'menu__item--current' : '' }} menu__item active"><a class="menu__link" href="{{ url('/') }}">Anasayfa <span class="sr-only">(current)</span></a></li>
+					<li class="{{ Route::currentRouteName() == 'about.show' ? 'menu__item--current' : '' }} menu__item"><a class="menu__link" href="{{ url('/hakkimizda') }}">Hakkımızda</a></li>
 					<li class="menu__item dropdown">
 					   <a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Kategoriler <b class="caret"></b></a>
 						<ul class="dropdown-menu agile_short_dropdown">
@@ -29,8 +29,8 @@
 							@endforeach
 						</ul>
 					</li>
-					<li class=" menu__item"><a class="menu__link" href="{{ url('/magazalarimiz') }}">Mağazalarımız</a></li>
-					<li class=" menu__item"><a class="menu__link" href="{{ url('/iletisim') }}">İletişim</a></li>
+					<li class="{{ Route::currentRouteName() == 'outlet.show' ? 'menu__item--current' : '' }}  menu__item "><a class="menu__link" href="{{ url('/magazalarimiz') }}">Mağazalarımız</a></li>
+					<li class="{{ Route::currentRouteName() == 'contact.show' ? 'menu__item--current' : '' }} menu__item"><a class="menu__link" href="{{ url('/iletisim') }}">İletişim</a></li>
 				  </ul>
 				</div>
 			  </div>

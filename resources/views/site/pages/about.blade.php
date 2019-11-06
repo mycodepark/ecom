@@ -11,7 +11,7 @@
         <div class="services-breadcrumb">
                 <div class="agile_inner_breadcrumb">
                     <ul class="w3_short">
-                        <li><a href="index.html">ANASAYFA</a><i>|</i></li>
+                        <li><a href="{{ url('/') }}">ANASAYFA</a><i>|</i></li>
                         <li>HAKKIMIZDA</li>
                     </ul>
                 </div>

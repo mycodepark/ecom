@@ -15,7 +15,9 @@
 Route::get('/', 'Site\HomeController@show')->name('home.show');
 Route::get('/hakkimizda', 'Site\AboutController@show')->name('about.show');
 Route::get('/magazalarimiz', 'Site\OutletController@show')->name('outlet.show');
+
 Route::get('/iletisim', 'Site\ContactController@show')->name('contact.show');
+Route::post('/iletisim/store', 'Site\ContactController@store')->name('site.contact.store');
 
 
 Route::get('/category/{slug}', 'Site\CategoryController@show')->name('category.show');

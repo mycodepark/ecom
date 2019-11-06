@@ -28,6 +28,12 @@ interface AboutContract
      */
     public function updateAbout(array $params);
 
+        /**
+     * @param array $params
+     * @return mixed
+     */
+    public function createMessage(array $params);
+
 
 
 }
