@@ -20,8 +20,8 @@ Route::get('/iletisim', 'Site\ContactController@show')->name('contact.show');
 Route::post('/iletisim/store', 'Site\ContactController@store')->name('site.contact.store');
 
 
-Route::get('/category/{slug}', 'Site\CategoryController@show')->name('category.show');
-Route::get('/product/{slug}', 'Site\ProductController@show')->name('product.show');
+Route::get('/kategori/{slug}', 'Site\CategoryController@show')->name('category.show');
+Route::get('/urun/{slug}', 'Site\ProductController@show')->name('product.show');
 
 Route::post('/product/add/cart', 'Site\ProductController@addToCart')->name('product.add.cart');
 Route::get('/cart', 'Site\CartController@getCart')->name('checkout.cart');

@@ -1,13 +1,25 @@
-@extends('site.app')
+@extends('site.mixapp')
 @section('title', $product->name)
 @section('content')
-    <section class="section-pagetop bg-dark">
-        <div class="container clearfix">
-            <h2 class="title-page">{{ $product->name }}</h2>
+
+<!-- /banner_bottom_agile_info -->
+<div class="page-head_agile_info_w3l">
+	<div class="container">
+        <h3>{{ $product->name }}<span></span></h3>
+        <!--/w3_short-->
+        <div class="services-breadcrumb">
+                <div class="agile_inner_breadcrumb">
+                    <ul class="w3_short">
+                        <li>
+                            <a href="{{ url('/') }}">ANASAYFA</a><i>|</i>KATEGORİLER<i>|</i>{{$product->categories['0']['name']}}<i>|</i>
+                        {{ $product->name }}</li>
+                    </ul>
+                </div>
         </div>
-    </section>
-    <section class="section-content bg padding-y border-top" id="site">
-        <div class="container">
+	   <!--//w3_short-->
+	</div>
+</div>
+
             <div class="row">
                 <div class="col-sm-12">
                     @if (Session::has('message'))
@@ -15,142 +27,178 @@
                     @endif
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="row no-gutters">
-                            <aside class="col-sm-5 border-right">
-                                <article class="gallery-wrap">
-                                    @if ($product->images->count() > 0)
-                                        <div class="img-big-wrap">
-                                            <div class="padding-y">
-                                                <a href="{{ asset('storage/'.$product->images->first()->full) }}" data-fancybox="">
-                                                    <img src="{{ asset('storage/'.$product->images->first()->full) }}" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    @else
-                                        <div class="img-big-wrap">
-                                            <div>
-                                                <a href="https://via.placeholder.com/176" data-fancybox=""><img src="https://via.placeholder.com/176"></a>
-                                            </div>
-                                        </div>
-                                    @endif
-                                     @if ($product->images->count() > 0)
-                                        <div class="img-small-wrap">
-                                            @foreach($product->images as $image)
-                                                <div class="item-gallery">
-                                                    <img src="{{ asset('storage/'.$image->full) }}" alt="">
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    @endif
-                                </article>
-                            </aside>
-                            <aside class="col-sm-7">
-                                <article class="p-5">
-                                    <h3 class="title mb-3">{{ $product->name }}</h3>
-                                    <dl class="row">
-                                        <dt class="col-sm-3">SKU</dt>
-                                        <dd class="col-sm-9">{{ $product->sku }}</dd>
-                                        <dt class="col-sm-3">Weight</dt>
-                                        <dd class="col-sm-9">{{ $product->weight }}</dd>
-                                    </dl>
-                                    <div class="mb-3">
-                                        @if ($product->sale_price > 0)
-                                            <var class="price h3 text-danger">
-                                                <span class="currency">{{ config('settings.currency_symbol') }}</span><span class="num" id="productPrice">{{ $product->sale_price }}</span>
-                                                <del class="price-old"> {{ config('settings.currency_symbol') }}{{ $product->price }}</del>
-                                            </var>
-                                        @else
-                                            <var class="price h3 text-success">
-                                                <span class="currency">{{ config('settings.currency_symbol') }}</span><span class="num" id="productPrice">{{ $product->price }}</span>
-                                            </var>
-                                        @endif
-                                    </div>
-                                    <hr>
-                                    <form action="{{ route('product.add.cart') }}" method="POST" role="form" id="addToCart">
-                                        @csrf
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <dl class="dlist-inline">
-                                                    @foreach($attributes as $attribute)
-                                                        @php
-                                                            if ($product->attributes->count() > 0) {
-                                                                $attributeCheck = in_array($attribute->id, $product->attributes->pluck('attribute_id')->toArray());
-                                                            } else {
-                                                                $attributeCheck = [];
-                                                            }
-                                                        @endphp
-                                                        @if ($attributeCheck)
-                                                            <dt>{{ $attribute->name }}: </dt>
-                                                            <dd>
-                                                                <select class="form-control form-control-sm option" style="width:180px;" name="{{ strtolower($attribute->name ) }}">
-                                                                    <option data-price="0" value="0"> Select a {{ $attribute->name }}</option>
-                                                                    @foreach($product->attributes as $attributeValue)
-                                                                        @if ($attributeValue->attribute_id == $attribute->id)
-                                                                            <option
-                                                                                data-price="{{ $attributeValue->price }}"
-                                                                                value="{{ $attributeValue->value }}"> {{ ucwords($attributeValue->value . ' +'. $attributeValue->price) }}
-                                                                            </option>
-                                                                        @endif
-                                                                    @endforeach
-                                                                </select>
-                                                            </dd>
-                                                        @endif
-                                                    @endforeach
-                                                </dl>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <dl class="dlist-inline">
-                                                    <dt>Quantity: </dt>
-                                                    <dd>
-                                                        <input class="form-control" type="number" min="1" value="1" max="{{ $product->quantity }}" name="qty" style="width:70px;">
-                                                        <input type="hidden" name="productId" value="{{ $product->id }}">
-                                                        <input type="hidden" name="price" id="finalPrice" value="{{ $product->sale_price != '' ? $product->sale_price : $product->price }}">
-                                                    </dd>
-                                                </dl>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <button type="submit" class="btn btn-success"><i class="fas fa-shopping-cart"></i> Add To Cart</button>
-                                    </form>
-                                </article>
-                            </aside>
-                        </div>
+
+
+  <!-- banner-bootom-w3-agileits -->
+  <div class="banner-bootom-w3-agileits">
+	<div class="container">
+	     <div class="col-md-4 single-right-left ">
+			<div class="grid images_3_of_2">
+				<div class="flexslider">
+					
+					<ul class="slides">
+                    @if ($product->images->count() > 0)
+                    @foreach($product->images as $image)
+						<li data-thumb="{{ asset('storage/'.$image->full) }}">
+							<div class="thumb-image"> <img src="{{ asset('storage/'.$image->full) }}" data-imagezoom="true" class="img-responsive"> </div>
+						</li>
+                        @endforeach
+                        @endif
+
+						
+					</ul>
+					<div class="clearfix"></div>
+				</div>	
+			</div>
+		</div>
+		<div class="col-md-8 single-right-left simpleCart_shelfItem">
+					<h3>{{ $product->name }}</h3>
+                    <br>
+                    <dl class="row">
+                        <dt class="col-sm-3">Ürün Kodu</dt>
+                        <dd class="col-sm-9">{{ $product->sku }}</dd>
+                    </dl>
+                    <div class="mb-3">
+                        @if ($product->sale_price > 0)
+                            <var class="price h3 text-danger">
+                                <span class="num" id="productPrice">{{ $product->sale_price }}</span> <span class="currency">{{ config('settings.currency_symbol') }}</span>
+                                <del class="price-old"> {{ $product->price }} {{ config('settings.currency_symbol') }}</del>
+                            </var>
+                        @else
+                            <var class="price h3 text-success">
+                                <span class="num" id="productPrice">{{ $product->price }}</span> <span class="currency">{{ config('settings.currency_symbol') }}</span>
+                            </var>
+                        @endif
                     </div>
-                </div>
-                <div class="col-md-12">
-                    <article class="card mt-4">
-                        <div class="card-body">
-                            {!! $product->description !!}
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
+					
+					
+
+		      </div>
+	 			<div class="clearfix"> </div>
+				<!-- /new_arrivals --> 
+	<div class="responsive_tabs_agileits"> 
+				<div id="horizontalTab">
+						<ul class="resp-tabs-list">
+							<li>AÇIKLAMA</li>
+							<li>BİLGİLER</li>
+						</ul>
+					<div class="resp-tabs-container">
+					<!--/tab_one-->
+					   <div class="tab1">
+							<div class="single_page_agile_its_w3ls">
+							  <h6>{{ $product->name }}</h6>
+							   <p>{!! $product->description !!}</p>
+							</div>
+						</div>
+						<!--//tab_one-->
+						   <div class="tab2">
+							<div class="single_page_agile_its_w3ls">
+							  <h6>TEKNİK ÖZELLİKLER</h6>
+							   <p>{!! $product->description !!}</p>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+	<!-- //new_arrivals --> 
+	  	<!--/slider_owl-->
+
+
+
 @stop
 @push('scripts')
-    <script>
-        $(document).ready(function () {
-            $('#addToCart').submit(function (e) {
-                if ($('.option').val() == 0) {
-                    e.preventDefault();
-                    alert('Please select an option');
-                }
-            });
-            $('.option').change(function () {
-                $('#productPrice').html("{{ $product->sale_price != '' ? $product->sale_price : $product->price }}");
-                let extraPrice = $(this).find(':selected').data('price');
-                let price = parseFloat($('#productPrice').html());
-                let finalPrice = (Number(extraPrice) + price).toFixed(2);
-                $('#finalPrice').val(finalPrice);
-                $('#productPrice').html(finalPrice);
-            });
-        });
-    </script>
+
+
+<!-- js -->
+<script type="text/javascript" src="{{ asset('frontend/home/js/jquery-2.1.4.min.js') }}"></script>
+<!-- //js -->
+<script src="{{ asset('frontend/home/js/modernizr.custom.js') }}"></script>
+	<!-- Custom-JavaScript-File-Links --> 
+	<!-- cart-js -->
+	<script src="{{ asset('frontend/home/js/minicart.min.js') }}"></script>
+<script>
+	// Mini Cart
+	paypal.minicart.render({
+		action: '#'
+	});
+
+	if (~window.location.search.indexOf('reset=true')) {
+		paypal.minicart.reset();
+	}
+</script>
+
+	<!-- //cart-js --> 
+	<!-- single -->
+<script src="{{ asset('frontend/home/js/imagezoom.js') }}"></script>
+<!-- single -->
+<!-- script for responsive tabs -->						
+<script src="{{ asset('frontend/home/js/easy-responsive-tabs.js') }}"></script>
+<script>
+	$(document).ready(function () {
+	$('#horizontalTab').easyResponsiveTabs({
+	type: 'default', //Types: default, vertical, accordion           
+	width: 'auto', //auto or any width like 600px
+	fit: true,   // 100% fit in a container
+	closed: 'accordion', // Start closed if in accordion view
+	activate: function(event) { // Callback function if tab is switched
+	var $tab = $(this);
+	var $info = $('#tabInfo');
+	var $name = $('span', $info);
+	$name.text($tab.text());
+	$info.show();
+	}
+	});
+	$('#verticalTab').easyResponsiveTabs({
+	type: 'vertical',
+	width: 'auto',
+	fit: true
+	});
+	});
+</script>
+<!-- FlexSlider -->
+<script src="{{ asset('frontend/home/js/jquery.flexslider.js') }}"></script>
+						<script>
+						// Can also be used with $(document).ready()
+							$(window).load(function() {
+								$('.flexslider').flexslider({
+								animation: "slide",
+								controlNav: "thumbnails"
+								});
+							});
+						</script>
+					<!-- //FlexSlider-->
+<!-- //script for responsive tabs -->	
+
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{{ asset('frontend/home/js/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('frontend/home/js/jquery.easing.min.js') }}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+
+<!-- for bootstrap working -->
+<script type="text/javascript" src="{{ asset('frontend/home/js/bootstrap.js') }}"></script>
 @endpush
+

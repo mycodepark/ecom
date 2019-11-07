@@ -70,4 +70,6 @@ class Product extends Model
     {
         return $this->hasMany(ProductAttribute::class);
     }
+
+  
 }
