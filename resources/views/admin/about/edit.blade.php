@@ -24,18 +24,7 @@
                             <label class="control-label" for="description">Açıklama</label>
                             <textarea class="form-control" rows="4" name="description" id="description">{{ old('description', $about->description) }}</textarea>
                         </div>
-
-
-                        <div class="form-group">
-                            <label class="control-label" for="phone">Telefon <span class="m-l-5 text-danger"> *</span></label>
-                            <input class="form-control @error('phone') is-invalid @enderror" type="text" name="phone" id="phone" value="{{ old('phone', $about->phone) }}"/>
-                            <input type="hidden" name="id" value="{{ $about->phone }}">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label" for="email">Mail Adresi <span class="m-l-5 text-danger"> *</span></label>
-                            <input class="form-control @error('email') is-invalid @enderror" type="text" name="email" id="email" value="{{ old('email', $about->email) }}"/>
-                            <input type="hidden" name="id" value="{{ $about->email }}">
-                        </div>
+                        
                         <div class="form-group">
                             <label class="control-label" for="adress">Adres</label>
                             <textarea class="form-control" rows="4" name="adress" id="adress">{{ old('adress', $about->adress) }}</textarea>

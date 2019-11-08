@@ -1,4 +1,5 @@
 
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('storage/'.config('settings.site_favicon')) }}">
 <link href="{{ asset('frontend/home/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
 <link href="{{ asset('frontend/home/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
 <link href="{{ asset('frontend/home/css/font-awesome.css') }}" rel="stylesheet"> 

@@ -43,14 +43,14 @@
 							<div class="mail-agileits-w3layouts">
 								<i class="fa fa-volume-control-phone" aria-hidden="true"></i>
 								<div class="contact-right">
-									<p>Telefon </p><span>{{ $contact->phone }}</span>
+									<p>Telefon </p><span>{{ config('settings.default_phone_number') }}</span>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
 							<div class="mail-agileits-w3layouts">
 								<i class="fa fa-envelope-o" aria-hidden="true"></i>
 								<div class="contact-right">
-									<p>Mail </p><a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a>
+									<p>Mail </p><a href="mailto:{{ config('settings.default_email_address') }}">{{ config('settings.default_email_address') }}</a>
 								</div>
 								<div class="clearfix"> </div>
 							</div>

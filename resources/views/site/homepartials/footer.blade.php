@@ -3,7 +3,7 @@
 <div class="footer">
 	<div class="footer_agile_inner_info_w3l">
 		<div class="col-md-3 footer-left">
-			<h2><a href="index.html">Visco<span>box</span> </a></h2>
+			<h2><a href="{{ url('/') }}"><img class="logo" style="width: 120px; height: auto;" src="{{ asset('storage/'.config('settings.site_logo')) }}" alt="logo"> </a></h2>
 			<p>Başarının yolu rahat bir uykudan geçer.</p>
 			<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
 				<li><a href="{{ config('settings.social_facebook') }}" target="_blank" class="facebook">
@@ -36,7 +36,7 @@
 							</div>
 							<div class="w3-address-right">
 								<h6>Telefon</h6>
-								<p>+1 234 567 8901</p>
+								<p>{{ config('settings.default_phone_number') }}</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -46,7 +46,7 @@
 							</div>
 							<div class="w3-address-right">
 								<h6>Email Adresi</h6>
-								<p>Email :<a href="mailto:example@email.com"> mail@example.com</a></p>
+								<p>Email :<a href="{{ config('settings.default_email_address') }}"> {{ config('settings.default_email_address') }}</a></p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>

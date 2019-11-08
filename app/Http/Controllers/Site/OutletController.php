@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
 use App\Contracts\OutletContract;
-use App\Contracts\CategoryContract;
 use App\Http\Controllers\BaseController;
 
 /**
@@ -17,18 +16,14 @@ class OutletController extends BaseController
      * @var OutletContract
      */
     protected $outletRepository;
-    protected $categoryRepository;
-
 
     /**
      * OutletController constructor.
      * @param OutletContract $outletRepository
      */
-    public function __construct(OutletContract $outletRepository, CategoryContract $categoryRepository)
+    public function __construct(OutletContract $outletRepository)
     {
         $this->outletRepository = $outletRepository;
-        $this->categoryRepository = $categoryRepository;
-
     }
 
     /**
@@ -37,10 +32,8 @@ class OutletController extends BaseController
     public function show()
     {
         $outlets = $this->outletRepository->listOutlets();
-        $categories = $this->categoryRepository->listCategories();
 
-
-        return view('site.pages.outlet', compact('outlets', 'categories'));
+        return view('site.pages.outlet', compact('outlets'));
     }
 
 

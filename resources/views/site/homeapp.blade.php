@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="Viscobox, Viscobox Mobilya Mağazası, Yatak, Baza, Başlık, Mobilya, Ev Eşyaları" />
+    <meta name="keywords" content="{{ config('settings.seo_keywords') }}" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') - {{ config('settings.site_title') }}</title>

@@ -18,8 +18,6 @@ class CreateAboutsTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('email')->nullable();
             $table->string('adress')->nullable();
             $table->string('map')->nullable();
             $table->timestamps();

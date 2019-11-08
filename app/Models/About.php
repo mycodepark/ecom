@@ -16,7 +16,7 @@ class About extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'image', 'phone', 'email', 'adress', 'map'
+        'name', 'description', 'image', 'adress', 'map'
     ];
 
 

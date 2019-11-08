@@ -35,7 +35,7 @@ class OutletRepository extends BaseRepository implements OutletContract
      * @param array $columns
      * @return mixed
      */
-    public function listOutlets(string $order = 'id', string $sort = 'desc', array $columns = ['*'])
+    public function listOutlets(string $order = 'id', string $sort = 'asc', array $columns = ['*'])
     {
         return $this->all($columns, $order, $sort);
     }

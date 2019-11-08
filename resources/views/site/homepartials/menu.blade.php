@@ -4,7 +4,7 @@
 		<h3 class="wthree_text_info">ÜRÜNLERİMİZ <span></span></h3>
 		<div class="col-md-5 bb-grids bb-left-agileits-w3layouts">
 			@foreach($categories as $category)
-			@if($category->slug == "yatak")
+			@if($category->slug == "yataklar")
 			<a href="{{ route('category.show', $category->slug) }}">
 			   <div class="bb-left-agileits-w3layouts-inner grid">
 					<figure class="effect-roxy">
@@ -21,7 +21,7 @@
 		</div>
 		<div class="col-md-7 bb-grids bb-middle-agileits-w3layouts">
 			@foreach($categories as $category)
-			@if($category->slug == "baza")
+			@if($category->slug == "bazalar")
 		    <a href="{{ route('category.show', $category->slug) }}">
 				<div class="bb-middle-agileits-w3layouts grid">
 					<figure class="effect-roxy">
@@ -36,7 +36,7 @@
 			@endif
 			@endforeach
 			@foreach($categories as $category)
-			@if($category->slug == "baslik")
+			@if($category->slug == "basliklar")
 			<a href="{{ route('category.show', $category->slug) }}">
 		     	<div class="bb-middle-agileits-w3layouts forth grid">
 					<figure class="effect-roxy">

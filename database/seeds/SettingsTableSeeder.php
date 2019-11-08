@@ -11,15 +11,19 @@ class SettingsTableSeeder extends Seeder
     protected $settings = [
         [
             'key'                       =>  'site_name',
-            'value'                     =>  'E-Commerce Application',
+            'value'                     =>  'Viscobox Mobilya',
         ],
         [
             'key'                       =>  'site_title',
-            'value'                     =>  'E-Commerce',
+            'value'                     =>  'Viscobox',
         ],
         [
             'key'                       =>  'default_email_address',
-            'value'                     =>  'admin@admin.com',
+            'value'                     =>  'info@viscobox.com',
+        ],
+        [
+            'key'                       =>  'default_phone_number',
+            'value'                     =>  '0312 353 50 60',
         ],
         [
             'key'                       =>  'currency_code',
@@ -39,19 +43,23 @@ class SettingsTableSeeder extends Seeder
         ],
         [
             'key'                       =>  'footer_copyright_text',
-            'value'                     =>  '',
+            'value'                     =>  'Copyright 2019 Viscobox. Her Hakkı Saklıdır.',
         ],
         [
             'key'                       =>  'seo_meta_title',
-            'value'                     =>  '',
+            'value'                     =>  'Viscobox',
         ],
         [
             'key'                       =>  'seo_meta_description',
-            'value'                     =>  '',
+            'value'                     =>  'Viscobox Mobilya, Yatak, Baza',
+        ],
+        [
+            'key'                       =>  'seo_keywords',
+            'value'                     =>  'Viscobox, Viscobox Mobilya Mağazası, Yatak, Baza, Başlık, Mobilya, Ev Eşyaları',
         ],
         [
             'key'                       =>  'social_facebook',
-            'value'                     =>  '',
+            'value'                     =>  'https://tr-tr.facebook.com/pages/category/Shopping---Retail/Viscobox-Yatak-Baza-Ba%C5%9Fl%C4%B1k-927051030766121/',
         ],
         [
             'key'                       =>  'social_twitter',
@@ -59,7 +67,7 @@ class SettingsTableSeeder extends Seeder
         ],
         [
             'key'                       =>  'social_instagram',
-            'value'                     =>  '',
+            'value'                     =>  'https://www.instagram.com/viscobox/?hl=tr',
         ],
         [
             'key'                       =>  'social_linkedin',

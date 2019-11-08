@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
 use App\Contracts\AboutContract;
-use App\Contracts\CategoryContract;
 use App\Http\Controllers\BaseController;
 
 /**
@@ -17,18 +16,14 @@ class AboutController extends BaseController
      * @var AboutContract
      */
     protected $aboutRepository;
-    protected $categoryRepository;
-
 
     /**
      * AboutController constructor.
      * @param AboutContract $aboutRepository
      */
-    public function __construct(AboutContract $aboutRepository, CategoryContract $categoryRepository)
+    public function __construct(AboutContract $aboutRepository)
     {
         $this->aboutRepository = $aboutRepository;
-        $this->categoryRepository = $categoryRepository;
-
     }
 
     /**
@@ -37,10 +32,8 @@ class AboutController extends BaseController
     public function show()
     {
         $about = $this->aboutRepository->listAbout();
-        $categories = $this->categoryRepository->listCategories();
 
-
-        return view('site.pages.about', compact('about', 'categories'));
+        return view('site.pages.about', compact('about'));
     }
 
 

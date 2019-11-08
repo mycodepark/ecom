@@ -20,7 +20,7 @@
 					<li class="{{ Route::currentRouteName() == 'home.show' ? 'menu__item--current' : '' }} menu__item active"><a class="menu__link" href="{{ url('/') }}">Anasayfa <span class="sr-only">(current)</span></a></li>
 					<li class="{{ Route::currentRouteName() == 'about.show' ? 'menu__item--current' : '' }} menu__item"><a class="menu__link" href="{{ url('/hakkimizda') }}">Hakkımızda</a></li>
 					<li class="menu__item dropdown {{ Route::currentRouteName() == 'category.show' ? 'menu__item--current' : '' }}">
-					   <a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Kategoriler <b class="caret"></b></a>
+					   <a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Ürünlerimiz <b class="caret"></b></a>
 						<ul class="dropdown-menu agile_short_dropdown">
 							@foreach($categories as $category)
 							@if ($category->id > 1)
@@ -36,17 +36,19 @@
 			  </div>
 			</nav>	
 		</div>
+		<!--
 		<div class="top_nav_right">
 			<div class="wthreecartaits wthreecartaits2 cart cart box_1"> 
-				<!--
+				
 				<form action="#" method="post" class="last"> 
 					<input type="hidden" name="cmd" value="_cart">
 					<input type="hidden" name="display" value="1">
 					<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
 				</form>  
-				-->
+				
 			</div>
 		</div>
+		-->
 		<div class="clearfix"></div>
 	</div>
 </div>
