@@ -6,7 +6,7 @@
             <h1><i class="fa fa-shopping-bag"></i> {{ $pageTitle }}</h1>
             <p>{{ $subTitle }}</p>
         </div>
-        <a href="{{ route('admin.products.create') }}" class="btn btn-primary pull-right">Add Product</a>
+        <a href="{{ route('admin.products.create') }}" class="btn btn-primary pull-right">Yeni Ürün Ekle</a>
     </div>
     @include('admin.partials.flash')
     <div class="row">
@@ -17,12 +17,12 @@
                         <thead>
                         <tr>
                             <th> # </th>
-                            <th> SKU </th>
-                            <th> Name </th>
-                            <th class="text-center"> Brand </th>
-                            <th class="text-center"> Categories </th>
-                            <th class="text-center"> Price </th>
-                            <th class="text-center"> Status </th>
+                            <th> Ürün Kodu </th>
+                            <th> Ürün Adı </th>
+                            <th class="text-center"> Markası </th>
+                            <th class="text-center"> Kategorisi </th>
+                            <th class="text-center"> Fiyatı </th>
+                            <th class="text-center"> Durum </th>
                             <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                         </tr>
                         </thead>

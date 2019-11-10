@@ -29,7 +29,7 @@ class BrandController extends BaseController
     {
         $brands = $this->brandRepository->listBrands();
 
-        $this->setPageTitle('Brands', 'List of all brands');
+        $this->setPageTitle('Markalar', 'Marka listesi');
         return view('admin.brands.index', compact('brands'));
     }
 
@@ -38,7 +38,7 @@ class BrandController extends BaseController
      */
     public function create()
     {
-        $this->setPageTitle('Brands', 'Create Brand');
+        $this->setPageTitle('Markalar', 'Yeni Marka Oluştur');
         return view('admin.brands.create');
     }
 
@@ -59,9 +59,9 @@ class BrandController extends BaseController
         $brand = $this->brandRepository->createBrand($params);
 
         if (!$brand) {
-            return $this->responseRedirectBack('Error occurred while creating brand.', 'error', true, true);
+            return $this->responseRedirectBack('Yeni marka eklenirken hata oluştu.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.brands.index', 'Brand added successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.brands.index', 'Yeni marka başarıyle eklendi.' ,'success',false, false);
     }
 
     /**
@@ -72,7 +72,7 @@ class BrandController extends BaseController
     {
         $brand = $this->brandRepository->findBrandById($id);
 
-        $this->setPageTitle('Brands', 'Edit Brand : '.$brand->name);
+        $this->setPageTitle('Markalar', 'Marka Düzenle : '.$brand->name);
         return view('admin.brands.edit', compact('brand'));
     }
 
@@ -93,9 +93,9 @@ class BrandController extends BaseController
         $brand = $this->brandRepository->updateBrand($params);
 
         if (!$brand) {
-            return $this->responseRedirectBack('Error occurred while updating brand.', 'error', true, true);
+            return $this->responseRedirectBack('Marka güncellenirken hata oluştu.', 'error', true, true);
         }
-        return $this->responseRedirectBack('Brand updated successfully' ,'success',false, false);
+        return $this->responseRedirectBack('Marka başaruyla güncellendi.' ,'success',false, false);
     }
 
     /**
@@ -107,8 +107,8 @@ class BrandController extends BaseController
         $brand = $this->brandRepository->deleteBrand($id);
 
         if (!$brand) {
-            return $this->responseRedirectBack('Error occurred while deleting brand.', 'error', true, true);
+            return $this->responseRedirectBack('Marka silinirken hata oluştu.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.brands.index', 'Brand deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.brands.index', 'Marka başarıyla silindi.' ,'success',false, false);
     }
 }

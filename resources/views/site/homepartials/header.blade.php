@@ -28,6 +28,8 @@
 		<!-- header-bot -->
 			<div class="col-md-4 logo_agile">
 				<h1><a href="{{ url('/') }}"><img class="logo" src="{{ asset('storage/'.config('settings.site_logo')) }}" alt="logo"><i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
+				<br>
+				<h6> <span>Başarının yolu rahat bir uykudan geçer</span> </h6>
 			</div>
         <!-- header-bot -->
 		<div class="col-md-4 agileits-social top_content">

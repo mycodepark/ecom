@@ -1,11 +1,11 @@
 <template>
     <div id="">
         <div class="tile">
-            <h3 class="tile-title">Attribute Values</h3>
+            <h3 class="tile-title">Özellik Değerleri</h3>
             <hr>
             <div class="tile-body">
                 <div class="form-group">
-                    <label class="control-label" for="value">Value</label>
+                    <label class="control-label" for="value">Değer</label>
                     <input
                         class="form-control"
                         type="text"
@@ -16,7 +16,7 @@
                     />
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="price">Price</label>
+                    <label class="control-label" for="price">Fiyat</label>
                     <input
                         class="form-control"
                         type="number"
@@ -31,29 +31,29 @@
                 <div class="row d-print-none mt-2">
                     <div class="col-12 text-right">
                         <button class="btn btn-success" type="submit" @click.stop="saveValue()" v-if="addValue">
-                            <i class="fa fa-fw fa-lg fa-check-circle"></i>Save
+                            <i class="fa fa-fw fa-lg fa-check-circle"></i>Kaydet
                         </button>
                         <button class="btn btn-success" type="submit" @click.stop="updateValue()" v-if="!addValue">
-                            <i class="fa fa-fw fa-lg fa-check-circle"></i>Update
+                            <i class="fa fa-fw fa-lg fa-check-circle"></i>Güncelle
                         </button>
                         <button class="btn btn-primary" type="submit" @click.stop="reset()" v-if="!addValue">
-                            <i class="fa fa-fw fa-lg fa-check-circle"></i>Reset
+                            <i class="fa fa-fw fa-lg fa-check-circle"></i>Sıfırla
                         </button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="tile">
-            <h3 class="tile-title">Option Values</h3>
+            <h3 class="tile-title">Seçim Değerleri</h3>
             <div class="tile-body">
                 <div class="table-responsive">
                     <table class="table table-sm">
                         <thead>
                         <tr class="text-center">
                             <th>#</th>
-                            <th>Value</th>
-                            <th>Price</th>
-                            <th>Action</th>
+                            <th>Değer</th>
+                            <th>Fiyat</th>
+                            <th>İşlem</th>
                         </tr>
                         </thead>
                         <tbody>

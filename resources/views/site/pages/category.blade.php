@@ -30,8 +30,8 @@
                             @else
                                 <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
                             @endif
-                            <figcaption class="info-wrap" >
-                                <h4 class="title" ><a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a></h4>
+                            <figcaption class="info-wrap"  >
+                            <a style="color:red; " href="{{ route('product.show', $product->slug) }}"><h4 class="title" style="text-align:center; background-color:#2fdab8; padding:5px 0 5px 0 ">{{ $product->name }}</h4></a>
                             </figcaption>
                             <div class="bottom-wrap" style="float: right;">
                                 <a href="{{ route('product.show', $product->slug) }}" class="btn btn-sm btn-success float-right">Ürün Detayı</a>

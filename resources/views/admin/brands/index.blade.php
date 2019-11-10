@@ -6,7 +6,7 @@
             <h1><i class="fa fa-briefcase"></i> {{ $pageTitle }}</h1>
             <p>{{ $subTitle }}</p>
         </div>
-        <a href="{{ route('admin.brands.create') }}" class="btn btn-primary pull-right">Add Brand</a>
+        <a href="{{ route('admin.brands.create') }}" class="btn btn-primary pull-right">Yeni Marka Ekle</a>
     </div>
     @include('admin.partials.flash')
     <div class="row">
@@ -17,7 +17,7 @@
                         <thead>
                         <tr>
                             <th> # </th>
-                            <th> Name </th>
+                            <th> Marka Adı </th>
                             <th> Slug </th>
                             <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                         </tr>

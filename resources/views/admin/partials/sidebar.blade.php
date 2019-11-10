@@ -10,31 +10,31 @@
         <li>
             <a class="app-menu__item {{ Route::currentRouteName() == 'admin.orders.index' ? 'active' : '' }}" href="{{ route('admin.orders.index') }}">
                 <i class="app-menu__icon fa fa-bar-chart"></i>
-                <span class="app-menu__label">Orders</span>
+                <span class="app-menu__label">Siparişler</span>
             </a>
         </li>
         <li>
             <a class="app-menu__item {{ Route::currentRouteName() == 'admin.products.index' ? 'active' : '' }}" href="{{ route('admin.products.index') }}">
                 <i class="app-menu__icon fa fa-shopping-bag"></i>
-                <span class="app-menu__label">Products</span>
+                <span class="app-menu__label">Ürünler</span>
             </a>
         </li>
         <li>
             <a class="app-menu__item {{ Route::currentRouteName() == 'admin.brands.index' ? 'active' : '' }}" href="{{ route('admin.brands.index') }}">
                 <i class="app-menu__icon fa fa-briefcase"></i>
-                <span class="app-menu__label">Brands</span>
+                <span class="app-menu__label">Markalar</span>
             </a>
         </li>
         <li>
             <a class="app-menu__item {{ Route::currentRouteName() == 'admin.categories.index' ? 'active' : '' }}" href="{{ route('admin.categories.index') }}">
                 <i class="app-menu__icon fa fa-tags"></i>
-                <span class="app-menu__label">Categories</span>
+                <span class="app-menu__label">Kategoriler</span>
             </a>
         </li>
         <li>
             <a class="app-menu__item {{ Route::currentRouteName() == 'admin.attributes.index' ? 'active' : '' }}" href="{{ route('admin.attributes.index') }}">
                 <i class="app-menu__icon fa fa-th"></i>
-                <span class="app-menu__label">Attributes</span>
+                <span class="app-menu__label">Özellikler</span>
             </a>
         </li>
 
@@ -62,7 +62,7 @@
         <li>
             <a class="app-menu__item {{ Route::currentRouteName() == 'admin.settings' ? 'active' : '' }}" href="{{ route('admin.settings') }}">
                 <i class="app-menu__icon fa fa-cogs"></i>
-                <span class="app-menu__label">Settings</span>
+                <span class="app-menu__label">Ayarlar</span>
             </a>
         </li>
     </ul>

@@ -29,7 +29,7 @@ class AttributeController extends BaseController
     {
         $attributes = $this->attributeRepository->listAttributes();
 
-        $this->setPageTitle('Attributes', 'List of all attributes');
+        $this->setPageTitle('Özellikler', 'Özellikler listesi');
         return view('admin.attributes.index', compact('attributes'));
     }
 
@@ -38,7 +38,7 @@ class AttributeController extends BaseController
      */
     public function create()
     {
-        $this->setPageTitle('Attributes', 'Create Attribute');
+        $this->setPageTitle('Özellikler', 'Yeni özellik ekle');
         return view('admin.attributes.create');
     }
 
@@ -60,9 +60,9 @@ class AttributeController extends BaseController
         $attribute = $this->attributeRepository->createAttribute($params);
 
         if (!$attribute) {
-            return $this->responseRedirectBack('Error occurred while creating attribute.', 'error', true, true);
+            return $this->responseRedirectBack('Yeni özellik eklenirken hata meydana geldi.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.attributes.index', 'Attribute added successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.attributes.index', 'Yeni özellik başarıyla eklendi.' ,'success',false, false);
     }
 
     /**
@@ -73,7 +73,7 @@ class AttributeController extends BaseController
     {
         $attribute = $this->attributeRepository->findAttributeById($id);
 
-        $this->setPageTitle('Attributes', 'Edit Attribute : '.$attribute->name);
+        $this->setPageTitle('Özellikler', 'Özellik Düzenle : '.$attribute->name);
         return view('admin.attributes.edit', compact('attribute'));
     }
 
@@ -95,9 +95,9 @@ class AttributeController extends BaseController
         $attribute = $this->attributeRepository->updateAttribute($params);
 
         if (!$attribute) {
-            return $this->responseRedirectBack('Error occurred while updating attribute.', 'error', true, true);
+            return $this->responseRedirectBack('Özellik güncellenirken hata oluştu.', 'error', true, true);
         }
-        return $this->responseRedirectBack('Attribute updated successfully' ,'success',false, false);
+        return $this->responseRedirectBack('Özellik başarıyla güncellendi.' ,'success',false, false);
     }
 
     /**
@@ -109,8 +109,8 @@ class AttributeController extends BaseController
         $attribute = $this->attributeRepository->deleteAttribute($id);
 
         if (!$attribute) {
-            return $this->responseRedirectBack('Error occurred while deleting attribute.', 'error', true, true);
+            return $this->responseRedirectBack('Özellik silinirken hata oluştu.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.attributes.index', 'Attribute deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.attributes.index', 'Özellik başarıyla silindi.' ,'success',false, false);
     }
 }
