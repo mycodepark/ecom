@@ -19,7 +19,7 @@
 				  <ul class="nav navbar-nav menu__list">
 					<li class="{{ Route::currentRouteName() == 'home.show' ? 'menu__item--current' : '' }} menu__item active"><a class="menu__link" href="{{ url('/') }}">Anasayfa <span class="sr-only">(current)</span></a></li>
 					<li class="{{ Route::currentRouteName() == 'about.show' ? 'menu__item--current' : '' }} menu__item"><a class="menu__link" href="{{ url('/hakkimizda') }}">Hakkımızda</a></li>
-					<li class="menu__item dropdown {{ Route::currentRouteName() == 'category.show' ? 'menu__item--current' : '' }}">
+					<li class="menu__item dropdown {{ Route::currentRouteName() == 'category.show' || Route::currentRouteName() == 'product.show' ? 'menu__item--current' : '' }}">
 					   <a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Ürünlerimiz <b class="caret"></b></a>
 						<ul class="dropdown-menu agile_short_dropdown">
 							@foreach($categories as $category)

@@ -11,7 +11,7 @@
                 <div class="agile_inner_breadcrumb">
                     <ul class="w3_short">
                         <li>
-                            <a href="{{ url('/') }}">ANASAYFA</a><i>|</i>KATEGORİLER<i>|</i>{{$product->categories['0']['name']}}<i>|</i>
+                            <a href="{{ url('/') }}">ANASAYFA</a><i>|</i><a href="{{ route('category.show', $product->categories['0']['slug']) }}">{{$product->categories['0']['name']}}</a><i>|</i>
                         {{ $product->name }}</li>
                     </ul>
                 </div>
@@ -37,14 +37,13 @@
 				<div class="flexslider">
 					
 					<ul class="slides">
-                    @if ($product->images->count() > 0)
-                    @foreach($product->images as $image)
+                    	@if ($product->images->count() > 0)
+                    	@foreach($product->images as $image)
 						<li data-thumb="{{ asset('storage/'.$image->full) }}">
 							<div class="thumb-image"> <img src="{{ asset('storage/'.$image->full) }}" data-imagezoom="true" class="img-responsive"> </div>
 						</li>
                         @endforeach
                         @endif
-
 						
 					</ul>
 					<div class="clearfix"></div>
@@ -58,20 +57,33 @@
                         <dt class="col-sm-3">Ürün Kodu</dt>
                         <dd class="col-sm-9">{{ $product->sku }}</dd>
                     </dl>
-                    <div class="mb-3">
-                        @if ($product->sale_price > 0)
-                            <var class="price h3 text-danger">
-                                <span class="num" id="productPrice">{{ $product->sale_price }}</span> <span class="currency">{{ config('settings.currency_symbol') }}</span>
-                                <del class="price-old"> {{ $product->price }} {{ config('settings.currency_symbol') }}</del>
-                            </var>
-                        @else
-                            <var class="price h3 text-success">
-                                <span class="num" id="productPrice">{{ $product->price }}</span> <span class="currency">{{ config('settings.currency_symbol') }}</span>
-                            </var>
-                        @endif
-                    </div>
-					
-					
+			
+			@if($product->attributes->count()>0)
+			<div class="bs-docs-example">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Ürün Ölçüsü</th>
+							<th>Fiyatı</th>
+						</tr>
+					</thead>
+					<tbody>
+						@php $i=1; @endphp
+						@foreach($product->attributes as $price)
+						<tr>
+							<td >{{$i}}</td>
+							<td>{{ $price->value }}</td>
+							<td>{{ $price->price }} {{ config('settings.currency_symbol') }}</td>
+						</tr>
+						@php $i =$i+1; @endphp
+						@endforeach
+					</tbody>
+				</table>
+			</div>
+			@endif
+
+
 
 		      </div>
 	 			<div class="clearfix"> </div>
@@ -79,11 +91,10 @@
 	<div class="responsive_tabs_agileits"> 
 				<div id="horizontalTab">
 						<ul class="resp-tabs-list">
-							<li>AÇIKLAMA</li>
-							<li>BİLGİLER</li>
+							<li>ÜRÜN BİLGİSİ</li>
 						</ul>
 					<div class="resp-tabs-container">
-					<!--/tab_one-->
+						<!--/tab_one-->
 					   <div class="tab1">
 							<div class="single_page_agile_its_w3ls">
 							  <h6>{{ $product->name }}</h6>
@@ -91,12 +102,6 @@
 							</div>
 						</div>
 						<!--//tab_one-->
-						   <div class="tab2">
-							<div class="single_page_agile_its_w3ls">
-							  <h6>TEKNİK ÖZELLİKLER</h6>
-							   <p>{!! $product->description !!}</p>
-							</div>
-						</div>
 					</div>
 				</div>	
 			</div>

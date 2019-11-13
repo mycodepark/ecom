@@ -14,7 +14,7 @@
 </div>
 <!-- //header -->
 <!-- header-bot -->
-<div class="header-bot">
+<div class="header-bot" style="margin-top:-30px">
 	<div class="header-bot_inner_wthreeinfo_header_mid">
 		<div class="col-md-4 header-middle">
             <!--
@@ -26,10 +26,8 @@
             -->
 		</div>
 		<!-- header-bot -->
-			<div class="col-md-4 logo_agile">
-				<h1><a href="{{ url('/') }}"><img class="logo" src="{{ asset('storage/'.config('settings.site_logo')) }}" alt="logo"><i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
-				<br>
-				<h6> <span>Başarının yolu rahat bir uykudan geçer</span> </h6>
+			<div class="col-md-4 logo_agile" >
+				<h1><a href="{{ url('/') }}"><img class="logo" src="{{ asset('storage/'.config('settings.site_logo')) }}" alt="logo" style="width: 150px; height: auto;"><i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
 			</div>
         <!-- header-bot -->
 		<div class="col-md-4 agileits-social top_content">
