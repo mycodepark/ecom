@@ -20,10 +20,16 @@
                             <input type="hidden" name="id" value="{{ $about->id }}">
                             @error('name') {{ $message }} @enderror
                         </div>
-                        <div class="form-group">
-                            <label class="control-label" for="description">Açıklama</label>
-                            <textarea class="form-control" rows="4" name="description" id="description">{{ old('description', $about->description) }}</textarea>
+
+                   
+                    
+                        <div class="form-group ">
+                        <label class="control-label" for="description">Açıklama</label>
+
+                                <textarea class="form-control ckeditor" rows="4" name="description" id="description">{{ old('description', $about->description) }}</textarea>
                         </div>
+                       
+                    
                         
                         <div class="form-group">
                             <label class="control-label" for="adress">Adres</label>

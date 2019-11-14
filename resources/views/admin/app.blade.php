@@ -21,6 +21,12 @@
     <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('backend/js/main.js') }}"></script>
     <script src="{{ asset('backend/js/plugins/pace.min.js') }}"></script>
+    <!--ckeditor 5 document -->
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>
+    <!--ckeditor 5 document -->
     @stack('scripts')
 </body>
 </html>

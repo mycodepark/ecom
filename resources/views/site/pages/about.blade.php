@@ -28,7 +28,7 @@
 				</div>
 				 <div class="col-md-6 ab_pic_w3ls_text_info">
 				    <h5>{{ $about->name }}<span></span> </h5>
-					<p>{{ $about->description }}</p>
+					<p>{!! $about->description !!}</p>
 				</div>
 				  <div class="clearfix"></div>
 			</div>    
