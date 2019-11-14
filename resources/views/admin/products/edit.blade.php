@@ -197,7 +197,8 @@
                 </div>
                 <div class="tab-pane" id="images">
                     <div class="tile">
-                        <h3 class="tile-title">Resim Yükle</h3>
+                        <h3 class="tile-title">Resim Yükle </h3>
+                        <p style="color:red">(Ürün resimleri 255x291px ölçülerinde olacaktır)</p>
                         <hr>
                         <div class="tile-body">
                             <div class="row">

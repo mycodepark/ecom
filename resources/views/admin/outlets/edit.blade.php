@@ -45,7 +45,8 @@
                                     @endif
                                 </div>
                                 <div class="col-md-10">
-                                    <label class="control-label">Slayt Resmi</label>
+                                    <label class="control-label">Mağaza Resmi</label>
+                                    <p style="color:red">(Mağaza resmi 640x426px ölçülerinde olacaktır)</p>
                                     <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"/>
                                     @error('image') {{ $message }} @enderror
                                 </div>

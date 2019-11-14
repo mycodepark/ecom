@@ -67,6 +67,7 @@
                                 </div>
                                 <div class="col-md-10">
                                     <label class="control-label">Kategori Resmi</label>
+                                    <p style="color:red">(Kategori resmi yatak için 510x620px, diğerleri için 650x280px, ölçülerinde olacaktır)</p>
                                     <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"/>
                                     @error('image') {{ $message }} @enderror
                                 </div>
