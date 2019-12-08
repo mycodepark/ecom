@@ -48,7 +48,7 @@ class ProductController extends BaseController
     public function store(StoreProductFormRequest $request)
     {
         $params = $request->except('_token');
-
+        
         $product = $this->productRepository->createProduct($params);
 
         if (!$product) {
@@ -70,7 +70,7 @@ class ProductController extends BaseController
     public function update(StoreProductFormRequest $request)
     {
         $params = $request->except('_token');
-
+        //dd($params);
         $product = $this->productRepository->updateProduct($params);
 
         if (!$product) {

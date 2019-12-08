@@ -1,6 +1,6 @@
 @extends('admin.app')
 @section('title') {{ $pageTitle }} @endsection
-=@section('content')
+@section('content')
     <div class="app-title">
         <div>
             <h1><i class="fa fa-shopping-bag"></i> {{ $pageTitle }} - {{ $subTitle }}</h1>
@@ -83,7 +83,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <!--<div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label" for="price">Fiyat</label>
                                             <input
@@ -98,22 +98,25 @@
                                                 <i class="fa fa-exclamation-circle fa-fw"></i> @error('price') <span>{{ $message }}</span> @enderror
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label" for="special_price">İndirimli Fiyat (İndirim varsa girilecek)</label>
+                                            <label class="control-label" for="special_price">İndirim Oranı (%)</label>
                                             <input
                                                 class="form-control"
                                                 type="text"
-                                                placeholder="Ürünün indirimli fiyatını giriniz"
+                                                placeholder="Ürünün indirim oranını giriniz"
                                                 id="special_price"
                                                 name="special_price"
                                                 value="{{ old('special_price') }}"
                                             />
+                                            <div class="invalid-feedback active">
+                                                <i class="fa fa-exclamation-circle fa-fw"></i> @error('special_price') <span>{{ $message }}</span> @enderror
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <!--<div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label" for="quantity">Adet</label>
@@ -130,6 +133,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label" for="weight">Ağırlık</label>
@@ -143,7 +147,8 @@
                                             />
                                         </div>
                                     </div>
-                                </div>
+
+                                </div>-->
                                 <div class="form-group">
                                     <label class="control-label" for="description">Açıklama</label>
                                     <textarea name="description" id="description" rows="8" class="form-control"></textarea>
@@ -155,7 +160,7 @@
                                                    type="checkbox"
                                                    id="status"
                                                    name="status"
-                                                />Durum 
+                                                />Aktif Olsun 
                                         </label>
                                     </div>
                                 </div>
@@ -166,7 +171,7 @@
                                                    type="checkbox"
                                                    id="featured"
                                                    name="featured"
-                                                />Özellik
+                                                />Yeni Ürün
                                         </label>
                                     </div>
                                 </div>

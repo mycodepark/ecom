@@ -15,6 +15,20 @@ Route::group(['prefix'  =>  'admin'], function () {
         Route::get('/settings', 'Admin\SettingController@index')->name('admin.settings');
         Route::post('/settings', 'Admin\SettingController@update')->name('admin.settings.update');
 
+
+        
+        Route::group(['prefix'  =>   'profile'], function() {
+
+            Route::get('/', 'Admin\ProfileController@index')->name('admin.profiles.index');
+            Route::post('/update', 'Admin\ProfileController@update')->name('admin.profiles.update');
+            Route::post('/avatar', 'Admin\ProfileController@avatarUpdate')->name('admin.profiles.avatarUpdate');
+            Route::post('/store', 'Admin\ProfileController@store')->name('admin.profiles.store');
+            Route::post('/changePassword','Admin\ProfileController@changePassword')->name('admin.profiles.changePassword');
+            
+        });
+
+
+
         Route::group(['prefix'  =>   'categories'], function() {
 
             Route::get('/', 'Admin\CategoryController@index')->name('admin.categories.index');
@@ -59,6 +73,7 @@ Route::group(['prefix'  =>  'admin'], function () {
            Route::post('/store', 'Admin\ProductController@store')->name('admin.products.store');
            Route::get('/edit/{id}', 'Admin\ProductController@edit')->name('admin.products.edit');
            Route::post('/update', 'Admin\ProductController@update')->name('admin.products.update');
+           //Route::get('/{id}/delete', 'Admin\ProductController@delete')->name('admin.products.delete');
 
            Route::post('images/upload', 'Admin\ProductImageController@upload')->name('admin.products.images.upload');
            Route::get('images/{id}/delete', 'Admin\ProductImageController@delete')->name('admin.products.images.delete');

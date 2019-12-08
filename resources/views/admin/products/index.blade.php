@@ -21,8 +21,8 @@
                             <th> Ürün Adı </th>
                             <th class="text-center"> Markası </th>
                             <th class="text-center"> Kategorisi </th>
-                            <th class="text-center"> Fiyatı </th>
                             <th class="text-center"> Durum </th>
+                            <th class="text-center"> Yeni Ürün </th>
                             <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                         </tr>
                         </thead>
@@ -38,12 +38,18 @@
                                             <span class="badge badge-info">{{ $category->name }}</span>
                                         @endforeach
                                     </td>
-                                    <td>{{ config('settings.currency_symbol') }}{{ $product->price }}</td>
                                     <td class="text-center">
                                         @if ($product->status == 1)
-                                            <span class="badge badge-success">Active</span>
+                                            <span class="badge badge-success">Aktif</span>
                                         @else
-                                            <span class="badge badge-danger">Not Active</span>
+                                            <span class="badge badge-danger">Aktif Değil</span>
+                                        @endif
+                                    </td>
+                                    <td class="text-center">
+                                        @if ($product->featured == 1)
+                                            <span class="badge badge-success">Yeni Ürün</span>
+                                        @else
+                                            <span class="badge badge-danger">Yeni Değil</span>
                                         @endif
                                     </td>
                                     <td class="text-center">

@@ -35,7 +35,7 @@ class CarouselRepository extends BaseRepository implements CarouselContract
      * @param array $columns
      * @return mixed
      */
-    public function listCarousels(string $order = 'id', string $sort = 'desc', array $columns = ['*'])
+    public function listCarousels(string $order = 'id', string $sort = 'asc', array $columns = ['*'])
     {
         return $this->all($columns, $order, $sort);
     }

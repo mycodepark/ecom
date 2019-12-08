@@ -66,15 +66,23 @@
 							<th>#</th>
 							<th>Ürün Ölçüsü</th>
 							<th>Fiyatı</th>
+							@if($product->sale_price>0 || $product->sale_price != null)
+							<th>İndirimli Fiyatı</th>
+							@endif
 						</tr>
 					</thead>
 					<tbody>
 						@php $i=1; @endphp
-						@foreach($product->attributes as $price)
+						@foreach($product->attributes as $attribute)
 						<tr>
 							<td >{{$i}}</td>
-							<td>{{ $price->value }}</td>
-							<td>{{ $price->price }} {{ config('settings.currency_symbol') }}</td>
+							<td>{{ $attribute->value }}</td>
+							@if($product->sale_price>0 || $product->sale_price != null)
+							<td> <del> {{ $attribute->price }} {{ config('settings.currency_symbol') }} </del> </td>
+							<td>{{ sprintf('%0.2f', $attribute->price*100/($product->sale_price+100)) }} {{ config('settings.currency_symbol') }}</td>
+							@else
+							<td>{{ $attribute->price }} {{ config('settings.currency_symbol') }}</td>
+							@endif
 						</tr>
 						@php $i =$i+1; @endphp
 						@endforeach

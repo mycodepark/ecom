@@ -15,7 +15,7 @@
                     @csrf
                     <div class="tile-body">
                         <div class="form-group">
-                            <label class="control-label" for="name">Başlık <span class="m-l-5 text-danger"> *</span></label>
+                            <label class="control-label" for="name">Başlık </label>
                             <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name" value="{{ old('name', $carousel->name) }}"/>
                             <input type="hidden" name="id" value="{{ $carousel->id }}">
                             @error('name') {{ $message }} @enderror

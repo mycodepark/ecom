@@ -20,6 +20,8 @@ use App\Contracts\AboutContract;
 use App\Repositories\AboutRepository;
 use App\Contracts\OutletContract;
 use App\Repositories\OutletRepository;
+use App\Contracts\ProfileContract;
+use App\Repositories\ProfileRepository;
 
 
 
@@ -35,6 +37,7 @@ class RepositoryServiceProvider extends ServiceProvider
         CarouselContract::class         =>          CarouselRepository::class,
         AboutContract::class            =>          AboutRepository::class,
         OutletContract::class           =>          OutletRepository::class,
+        ProfileContract::class          =>          ProfileRepository::class,
 
     ];
 

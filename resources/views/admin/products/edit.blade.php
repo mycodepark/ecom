@@ -94,7 +94,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <!--<div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label" for="price">Fiyatı</label>
                                             <input
@@ -109,14 +109,14 @@
                                                 <i class="fa fa-exclamation-circle fa-fw"></i> @error('price') <span>{{ $message }}</span> @enderror
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label" for="sale_price">İndirimli Fiyat (İndirim varsa seçilecek)</label>
+                                            <label class="control-label" for="sale_price">İndirim Oranı (%)</label>
                                             <input
                                                 class="form-control"
                                                 type="text"
-                                                placeholder="Ürünün indirimli fiyatını giriniz "
+                                                placeholder="Ürünün indirim oranını giriniz "
                                                 id="sale_price"
                                                 name="sale_price"
                                                 value="{{ old('sale_price', $product->sale_price) }}"
@@ -124,7 +124,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <!--<div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label" for="quantity">Adet</label>
@@ -154,7 +154,7 @@
                                             />
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="form-group">
                                     <label class="control-label" for="description">Açıklama</label>
                                     <textarea name="description" id="description" rows="8" class="form-control">{{ old('description', $product->description) }}</textarea>
@@ -167,7 +167,7 @@
                                                    id="status"
                                                    name="status"
                                                    {{ $product->status == 1 ? 'checked' : '' }}
-                                                />Durum
+                                                />Aktif Olsun
                                         </label>
                                     </div>
                                 </div>
@@ -179,7 +179,7 @@
                                                    id="featured"
                                                    name="featured"
                                                    {{ $product->featured == 1 ? 'checked' : '' }}
-                                                />Özellik
+                                                />Yeni Ürün
                                         </label>
                                     </div>
                                 </div>

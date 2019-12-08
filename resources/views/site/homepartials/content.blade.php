@@ -34,8 +34,8 @@
 						<i class="fa fa-gift" aria-hidden="true"></i>
 					</div>
 					<div class="w3layouts_mail_grid_left2">
-						<h3>SÜRPRİZ HEDİYELER</h3>
-						<p>Mağazalarımızda sürpriz hediyler ile karşılaşabilirsiniz.</p>
+						<h3>SÜRPRİZ KAMPANYALAR</h3>
+						<p>Mağazalarımızda sürpriz kampanyalar ile karşılaşabilirsiniz.</p>
 					</div>
 				</div>
 				<div class="clearfix"> </div>

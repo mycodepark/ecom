@@ -54,7 +54,7 @@ class CarouselController extends BaseController
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name'      =>  'required|max:191',
+            'name'      =>  'max:191',
             'image'     =>  'mimes:jpg,jpeg,png|max:1000'
         ]);
 
@@ -88,7 +88,7 @@ class CarouselController extends BaseController
     public function update(Request $request)
     {
         $this->validate($request, [
-            'name'      =>  'required|max:191',
+            'name'      =>  'max:191',
             'image'     =>  'mimes:jpg,jpeg,png|max:1000'
         ]);
 

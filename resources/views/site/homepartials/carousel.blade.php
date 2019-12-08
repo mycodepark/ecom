@@ -16,7 +16,7 @@
 					<div class="carousel-caption">
 						<h3><span>{{ $carousel->name }}</span></h3>
 						<p>{{ $carousel->description }}</p>
-						<a class="hvr-outline-out button2" href="{{ route('category.show', 'yataklar') }}">Alışverişe Başla </a>
+						<a class="hvr-outline-out button2" href="{{ route('category.show', 'yataklar') }}">Ürünlere Gözat </a>
 					</div>
 				</div>
 			</div>
